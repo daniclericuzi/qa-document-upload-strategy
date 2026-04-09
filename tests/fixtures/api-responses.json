@@ -1,0 +1,82 @@
+{
+  "successfulExtraction": {
+    "status": "success",
+    "data": {
+      "id": "extraction-12345",
+      "status": "completed",
+      "extractedData": {
+        "invoiceNumber": "INV-2024-001",
+        "customerName": "Acme Corporation",
+        "totalAmount": 1250.00,
+        "dueDate": "2024-12-31"
+      },
+      "confidence": 0.95,
+      "processingTime": 2.3
+    }
+  },
+  "extractionInProgress": {
+    "status": "processing",
+    "data": {
+      "id": "extraction-12346",
+      "status": "processing",
+      "progress": 0.6,
+      "estimatedTimeRemaining": 8.5
+    }
+  },
+  "extractionFailed": {
+    "status": "error",
+    "error": {
+      "code": "EXTRACTION_FAILED",
+      "message": "Unable to extract data from document. The document may be corrupted or in an unsupported format.",
+      "details": "OCR confidence too low"
+    }
+  },
+  "fileTooLarge": {
+    "status": "error",
+    "error": {
+      "code": "FILE_TOO_LARGE",
+      "message": "File size exceeds the maximum allowed limit of 10MB.",
+      "details": "File size: 15.2MB"
+    }
+  },
+  "invalidFileType": {
+    "status": "error",
+    "error": {
+      "code": "INVALID_FILE_TYPE",
+      "message": "Only PDF files are supported for document extraction.",
+      "details": "Received: application/msword"
+    }
+  },
+  "timeout": {
+    "status": "error",
+    "error": {
+      "code": "PROCESSING_TIMEOUT",
+      "message": "Document processing timed out. Please try again or contact support if the issue persists.",
+      "details": "Processing exceeded 30 second limit"
+    }
+  },
+  "partialExtraction": {
+  "status": "success",
+  "data": {
+    "id": "extraction-12348",
+    "status": "completed",
+    "extractedData": {
+      "invoiceNumber": "INV-2024-003",
+      "customerName": null,
+      "totalAmount": 980.00,
+      "dueDate": null
+    },
+    "missingFields": ["customerName", "dueDate"],
+    "confidence": 0.55,
+    "processingTime": 4.1
+  }
+},
+"serviceUnavailable": {
+  "status": "error",
+  "error": {
+    "code": "SERVICE_UNAVAILABLE",
+    "message": "The processing service is temporarily unavailable. Please try again later.",
+    "details": "Internal service connection failed"
+  }
+}
+}

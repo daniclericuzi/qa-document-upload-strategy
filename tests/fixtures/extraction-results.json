@@ -1,0 +1,37 @@
+{
+  "invoice-001": {
+    "expectedData": {
+      "invoiceNumber": "INV-2024-001",
+      "customerName": "Acme Corporation",
+      "totalAmount": 1250.00,
+      "dueDate": "2024-12-31",
+      "items": [
+        {
+          "description": "Software License",
+          "quantity": 1,
+          "unitPrice": 1000.00,
+          "lineTotal": 1000.00
+        },
+        {
+          "description": "Support Services",
+          "quantity": 1,
+          "unitPrice": 250.00,
+          "lineTotal": 250.00
+        }
+      ]
+    },
+    "fileName": "invoice-001.pdf",
+    "fileSize": 245760
+  },
+  "contract-001": {
+    "expectedData": {
+      "contractId": "CTR-2024-045",
+      "parties": ["Tech Solutions Inc.", "Global Services Ltd."],
+      "effectiveDate": "2024-01-15",
+      "term": "24 months",
+      "value": 50000.00
+    },
+    "fileName": "contract-001.pdf",
+    "fileSize": 512000
+  }
+}
