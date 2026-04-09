@@ -46,9 +46,9 @@ The extraction logic lives in the API, not the UI. Testing at the API layer with
 
 I prioritize API tests at the base of the pyramid and use mocks to create deterministic, fast, and independent tests. E2E tests are added on top for critical user-facing flows, not as the primary coverage layer.
 
-**Jest + supertest for API tests** : Jest is reliable and used for unit and integration tests. Supertest handles HTTP assertions without extra setup. Playwright was considered but it is built for browser automation mainly and would be too heavy for isolated API tests.
+**Jest + Supertest for API tests**: Jest is reliable and used for unit and integration tests in.js stacks. Supertest handles HTTP assertions without extra setup. Playwright was considered and would be equally valid especially in a project already using Playwright, consolidating both layers in a single tool would be a reasonable decision to reduce stack complexity. The choice of Jest here reflects familiarity and the established convention for isolated API testing in .js projects.
 
-**Playwright for E2E**: Used to validate the full upload → process → review → save flow. Even without UI, Playwright handles async workflows well and fits this feature.
+**Playwright for E2E**: Used to validate the full upload → process → review → save flow via API. Playwright handles very well with async workflows, making it a strong fit for a feature where processing may take several seconds and states like pending, processing, completed and failed need to be validated.
 
 **Service client (ApiClient)**: Centralizes all API calls in one place. If the API changes, you update the client, not every test.
 
