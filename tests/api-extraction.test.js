@@ -91,14 +91,16 @@ describe('Document Extraction API', () => {
       expect(response.body.data.processingTime).toBeGreaterThan(0)
       expect(response.body.data.processingTime).toBeLessThan(30)
     })
-
   })
 
-  test('should transition status from processing to completed', async () => {
-  const response = await client.getStatus('extraction-12346')
+  describe('Status Transitions', () => {
 
-  expect(response.status).toBe(200)
-  expect(['processing', 'completed', 'failed', 'pending'])
-    .toContain(response.body.data.status)
-})
+    test('should transition status from processing to completed', async () => {
+      const response = await client.getStatus('extraction-12346')
+
+      expect(response.status).toBe(200)
+      expect(['processing', 'completed', 'failed', 'pending'])
+        .toContain(response.body.data.status)
+    })
+  })
 })
