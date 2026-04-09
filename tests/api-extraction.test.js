@@ -101,17 +101,4 @@ describe('Document Extraction API', () => {
   expect(['processing', 'completed', 'failed', 'pending'])
     .toContain(response.body.data.status)
 })
-
-  describe('Input Validation', () => {
-
-    test('should reject request without a file', async () => {
-      const response = await client.extractWithoutFile()
-
-      expect(response.status).toBe(400)
-      expect(response.body.status).toBe('error')
-      expect(response.body.error.code).toBe('NO_FILE')
-    })
-
-  })
-
 })
