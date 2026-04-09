@@ -7,7 +7,7 @@ This repository contains a test automation solution for the Document Upload & Da
 **Requirements:** Node.js 18+ and npm 9+
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/daniclericuzi/qa-document-upload-strategy.git)
 cd qa-document-upload-strategy
 npm install
 ```
